@@ -10,6 +10,7 @@ namespace Lab1
     {
         static bool f(int n)
         {
+            /* это у нас функция , которая нахуодит Prime числа, это числа которые делять на 1 и на самого себя */
             if (n <= 1) return false;
             else
             {
@@ -27,27 +28,27 @@ namespace Lab1
         }
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            string s = Console.ReadLine();
-            string[] a = s.Split();
-            int[] b = new int[n];
+            int n = int.Parse(Console.ReadLine()); /* Количество элементов массива */
+            string s = Console.ReadLine(); /* */
+            string[] a = s.Split();/* создаем массив стрингов которых разбиваем на подстроки с помощью s.Split*/
+            int[] b = new int[n]; /* у нас массив с количеством n */ 
             for (int i = 0; i < n; i++)
             {
-                b[i] = int.Parse(a[i]);
+                b[i] = int.Parse(a[i]); /* массив стрингов делаем массивом челых чисел sting -> int , через int.Parse() */ 
             }
             int cnt = 0;
             for (int i = 0; i < n; i++)
             {
-                if (f(b[i]) == false) b[i] = 0;
+                if (f(b[i]) == false) b[i] = 0;/*закиндаваем каждый элемент массива в функцию , чтоб проверить является ли число Prime? */
                 else cnt++;
             }
-            Console.WriteLine(cnt);
+            Console.WriteLine(cnt);/*показываем на экране количество чисел */ 
             for (int i = 0; i < n; i++)
             {
-                if (b[i] != 0) Console.Write(b[i] + " ");
+                if (b[i] != 0) Console.Write(b[i] + " ");/* Prime числа на экране*/
 
             }
-            Console.ReadKey();
+           
         }
 
     }
